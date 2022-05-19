@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/rgAlgorithms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rgDataStructure"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/btnBubbleAlgorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bubble" />
+
+        <RadioButton
+            android:id="@+id/btnShakerAlgorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shaker" />
+
+        <RadioButton
+            android:id="@+id/btnHeapAlgorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heap" />
+
+        <RadioButton
+            android:id="@+id/btnQuickAlgorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quick" />
+
+        <RadioButton
+            android:id="@+id/btnStandardAlgorithm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Standard" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgDataStructure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rgAlgorithms"
+        app:layout_constraintTop_toTopOf="@id/rgAlgorithms">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/btnIntArray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IntArray" />
+
+        <RadioButton
+            android:id="@+id/btnArrayList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ArrayList" />
+
+        <RadioButton
+            android:id="@+id/btnLinkedList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LinkedList" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvResultSortingExecutionTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000000000000"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTextSortingExecutionTime" />
+
+    <TextView
+        android:id="@+id/tvTextSortingExecutionTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sorting execution time:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSort"
+        style="@style/MaterialAlertDialog.Material3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="Sort"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultSortingExecutionTime" />
+
+    <TextView
+        android:id="@+id/tvSizeArray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size:"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edSizeArray"
+        app:layout_constraintEnd_toStartOf="@+id/edSizeArray"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edSizeArray" />
+
+    <EditText
+        android:id="@+id/edSizeArray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:ems="5"
+        android:gravity="center"
+        android:hint="10 - 10000"
+        android:inputType="number"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/rgAlgorithms"
+        app:layout_constraintEnd_toStartOf="@id/btnGenerate"
+        app:layout_constraintStart_toEndOf="@id/tvSizeArray" />
+
+    <Button
+        android:id="@+id/btnGenerate"
+        style="@style/MaterialAlertDialog.Material3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="Generate"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edSizeArray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edSizeArray"
+        app:layout_constraintTop_toTopOf="@+id/edSizeArray" />
+
+    <TextView
+        android:id="@+id/tvTextArray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="80dp"
+        android:text="Array:"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSizeArray"
+        app:layout_constraintEnd_toEndOf="@id/tvSizeArray" />
+
+    <TextView
+        android:layout_marginHorizontal="15dp"
+        android:id="@+id/tvArray"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvTextArray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTextArray"
+        app:layout_constraintTop_toTopOf="@id/tvTextArray" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
